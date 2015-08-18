@@ -8,7 +8,7 @@ def mixedMethod(x, a, b, mod):
         if (periodo == 0):
             bandera = x
         x = (a * x + b) % mod
-        print(x),
+        print("valor aleatorio: "x)
         periodo = periodo + 1
  
     if(periodo == mod):
