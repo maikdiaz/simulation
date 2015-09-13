@@ -45,20 +45,20 @@ def main():
     #plt.bar(x,y2,label='Barras 2',color='c')
 
     ###Histogram
-    #bins=range(0,110,10)
-    #plt.hist(x,bins,histtype='bar',rwidth=0.8)
+    bins=range(0,110,10)
+    plt.hist(x,bins,histtype='bar',rwidth=0.8)
 
     ###scatter
-    plt.scatter(x,x2,label='puntitos azules', color='b', marker='*', s=10)
-    plt.scatter(x,y,label='puntitos rojos', color='r', marker='o', s=10)
+    #plt.scatter(x,x2,label='puntitos azules', color='b', marker='*', s=10)
+    #plt.scatter(x,y,label='puntitos rojos', color='r', marker='o', s=10)
 
 
     ###texto sobre la grafica
-    plt.text(4,4,'text')
-    plt.annotate('anotacion',(0,0), 
-                 xytext=(0.9,0.9),textcoords='axes fraction',
-                 arrowprops = dict(facecolor='black', color='black')
-                )
+    #plt.text(4,4,'text')
+    #plt.annotate('anotacion',(0,0), 
+                #  xytext=(0.9,0.9),textcoords='axes fraction',
+                #  arrowprops = dict(facecolor='black', color='black')
+                # )
 
 
     plt.xlabel('Numeros X')
