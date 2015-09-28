@@ -49,24 +49,47 @@ def random_list(cantidad):
 
     return l
 
-def poisson(x,landa):
-    n=0
-    y=1.0
-    v=np.exp(-landa/x)
-    l=random_list(1000)
+#hallar la funcion de distribucion de probabilidad
+def cdfp(landa,cantidad):
 
-    while (y>=v) :
-        y = y*l[n]
-        n = n+1
+    p=[]
+    for x in range(cantidad):
+        p.append((np.exp(-landa)*(landa**x))/(np.math.factorial(x)))
+    #print 'probabilidades: ',p
 
-    return n
-    
+    cdf=[]
+    acumulado=0.0
+    for valor in p:
+        acumulado=valor+acumulado
+        cdf.append(acumulado)
+
+    #print 'acumuladas',cdf
+    return cdf
+
+def metodo_inversion(cantidad, acumulada):
+
+    aleatorios=random_list(cantidad)
+    resultados=[]
+
+    for aleatorio in aleatorios:
+        i=0
+        for elemento in acumulada:
+            if aleatorio <= elemento:
+                resultados.append(i)
+                break
+            i=i+1
+
+    return resultados
 
 def main():
-    landa=3.0
+    cantidad=50 #float(input('cantidad aleatorios: '))
+    landa=4.0 #float(input('valor de landa: '))
+    cdf=[]
+    cdf=cdfp(landa,cantidad)
+    valeatoria=metodo_inversion(cantidad,cdf)
+    print 'Variables aleatorias con distribucion poisson: \n',valeatoria
 
-    for x in range(cantidad):
-        print "variable: ",poisson(probabilidad,landa)
+    
 
 
     try:
@@ -77,3 +100,20 @@ def main():
 if __name__ == "__main__":
     current_milli_time = lambda: int(round(time.time() * 1000))
     main()
+
+
+
+
+
+
+# def poisson(x,landa):
+#     n=0
+#     y=1.0
+#     v=np.exp(-landa/x)
+#     l=random_list(1000)
+
+#     while (y>=v) :
+#         y = y*l[n]
+#         n = n+1
+
+#     return n

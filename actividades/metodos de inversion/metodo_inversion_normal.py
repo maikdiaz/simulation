@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.integrate import quad
  
 def mixedMethod1(x1,mod1):
     a1 = 171 #int(raw_input("Introduce el valor del multiplicador: "))
@@ -47,26 +48,47 @@ def random_list(cantidad):
 
     return u
 
-def poisson(k,landa)
+from scipy.integrate import quad
+
+
+def integrand(t,x):
+    return np.exp(-(t**2))
+
+
+def invErrorFunction(x):
+    I = quad(integrand, 0, x, args=(x))[0]
+    resultado= (2/np.sqrt(np.pi))*(1/I)
+
+
+    return resultado
+
+
+
+def normal_inversa(cantidad,media,varianza):
+    aleatorios=random_list(cantidad)
+
+    valor=0.0
+    resultado=[]
+    for x in range(cantidad):
+        valor= media + (varianza * np.sqrt(2)*invErrorFunction(2*aleatorios[x]-1))
+        resultado.append(valor)
+    
+    return resultado
+
     
 
 def main():
     
     cantidad = 10 #int(input('cantidad de variables aleatorias: '))
+    media=0.0 #float(input('ingrese la media: '))
+    varianza= 1.0 #float(input('ingrese la varianza: '))
 
-    valores=random_list(cantidad)
+    resultado=[]
+    resultado=normal_inversa(cantidad, media, varianza)
+    print resultado
 
-    x=[1,2,3,4,5,6,7,8,9,10,11,12]
+    
 
-    p=[1.0/36.0,3.0/36.0,6.0/36.0,10.0/36.0,15.0/36.0,21.0/36.0,26.0/36.0,30.0/36.0,33.0/36.0,35.0/36.0,1.0]
-
-    for valor in valores:
-        i=0
-        for elemento in p:
-            if valor <= elemento:
-                print x[i],
-                break
-            i=i+1
     try:
         input('\n\npush enter to finish')
     except:

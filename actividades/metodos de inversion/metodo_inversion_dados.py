@@ -51,15 +51,15 @@ def main():
     
     cantidad = int(input('cuantas veces desea lanzar los dados: '))
 
-    valores=listadoAleatorio(cantidad)
+    aleatorios=listadoAleatorio(cantidad)
 
     x=[2,3,4,5,6,7,8,9,10,11,12]
-    p=[1.0/36.0,3.0/36.0,6.0/36.0,10.0/36.0,15.0/36.0,21.0/36.0,26.0/36.0,30.0/36.0,33.0/36.0,35.0/36.0,1.0]
+    acumulada=[1.0/36.0,3.0/36.0,6.0/36.0,10.0/36.0,15.0/36.0,21.0/36.0,26.0/36.0,30.0/36.0,33.0/36.0,35.0/36.0,1.0]
 
-    for valor in valores:
+    for aleatorio in aleatorios:
         i=0
-        for elemento in p:
-            if valor <= elemento:
+        for elemento in acumulada:
+            if aleatorio <= elemento:
                 print x[i],
                 break
             i=i+1
