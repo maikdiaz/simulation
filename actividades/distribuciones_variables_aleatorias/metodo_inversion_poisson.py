@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import time
-import random
  
 def mixedMethod1(x1,mod1):
     a1 = 171 #int(raw_input("Introduce el valor del multiplicador: "))
