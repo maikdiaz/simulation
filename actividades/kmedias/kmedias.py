@@ -40,14 +40,37 @@ def random(escala, cantidad, semilla):
     return x
 
 
+def redefinirCentroides(puntos, centros):
+
+    for k in range(len(centros)):
+
+        contador=0
+        x = 0.0
+        y = 0.0
+        for i in range(len(puntos)):
+
+            if( puntos[i][2] == k ):
+                contador += 1
+                x += puntos[i][0]
+                y += puntos[i][1]
+
+        centros[k][0] = x/contador
+        centros[k][1] = y/contador
+
+
+    return centros
+
+
+
+
 
 def main():
 
     escala=5 #int(input('rango de aleatorios 0 a x: '))
 
     puntos=[]
-    x = random(escala, 100, 4568)
-    y = random(escala, 100, 6543)
+    x = random(escala, 500, 4568)
+    y = random(escala, 500, 6543)
 
     for i in range(len(x)):
         puntos.append( [ x[i], y[i] ] )
@@ -69,35 +92,34 @@ def main():
     cn= 0
 
     for i in range(len(centros)):
-        plt.scatter(centros[i][0],centros[i][1], color=colors[cn], marker='x', s=150)
         centros[i].append(colors[cn])
         cn+=1
 
-    for i in range(len(puntos)):
-        plt.scatter(puntos[i][0],puntos[i][1], marker='*', s=100)
-        cn+=1
+    for i in range(len(centros)):
+        plt.scatter(centros[i][0],centros[i][1], color=centros[i][2], marker='*', s=150)
 
-    plt.show()
-    
 
+    clasificacion=[]
     for i in range(len(puntos)):
         distancia=[]
         for j in range(len(centros)):
             distancia.append( np.sqrt( (puntos[i][0]-centros[j][0])**2) +((puntos[i][1]-centros[j][1])**2))
 
-        cercano=100000000000000000000000000000000000
-        index=0
-        for k in distancia:
-            if cercano > k :
-                cercano = k
-                index +=1
-        print index
-        puntos[i].append(centros[index][2])
+        pos = np.argmin(distancia)
+
+        puntos[i].append(pos)
+
 
     for i in range(len(puntos)):
-        plt.scatter(puntos[i][0],puntos[i][1], color=puntos[i][2], marker='o', s=100)
+        plt.scatter(puntos[i][0], puntos[i][1], color=centros[puntos[i][2]][2], marker='o', s=10)
+
 
     plt.show()
+
+
+    centros = redefinirCentroides(puntos, centros)
+
+
 
 
         
