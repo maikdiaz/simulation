@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introducci\363n}{}% 1
+\BOOKMARK [1][-]{section.2}{Desarrollo}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{\277Qu\351 le aparece en la vista?}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{\277Qu\351 le est\341 sucediendo a las poblaciones de lobos y ovejas a medida que est\341 corriendo el modelo? \277Alguna vez obtendr\341 resultados diferentes si ejecuta el modelo en repetidas ocasiones manteniendo la misma configuraci\363n?}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{\277Qu\351 pas\363 con las ovejas a trav\351s del tiempo?}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{\277Qu\351 le hizo este switch al modelo? \277Fue el mismo resultado de la ejecuci\363n previa?}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{\277Qu\351 suceder\355a con la poblaci\363n de ovejas si hay al comienzo de la simulaci\363n m\341s ovejas y menos lobos?}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{\277Qu\351 le ocurri\363 a la poblaci\363n de ovejas?}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.7}{\277Le sorprendi\363 este resultado?, \277Qu\351 otros sliders o switches se pueden ajustar para ayudarle a la poblaci\363n de ovejas?}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.8}{\277Qu\351 le pas\363 a los lobos en esta ejecuci\363n?}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.9}{Control de la ventana vista}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.10}{\277Cu\341les son los ajustes actuales para max-pxcor, pxcor-min, Max-pycor, min-pycor, y patch size \(tama\361o del parche\)?}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.11}{\277Qu\351 n\372meros cambiaron? \277Qu\351 n\372meros no cambiaron?}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.12}{\277A cu\341ntas baldosas de distancia est\341 la baldosa \(0,0\) respecto a lado derecho de la habitaci\363n? \277A Cu\341ntas baldosas de distancia est\341 la baldosa \(0,0\) respecto al lado izquierdo de la habitaci\363n?}{section.2}% 14
+\BOOKMARK [2][-]{subsection.2.13}{\277Qu\351 le ocurri\363 a la forma de la vista?}{section.2}% 15
